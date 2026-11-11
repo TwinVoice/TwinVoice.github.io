@@ -1,68 +1,97 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>TwinVoice: A Multi-dimensional Benchmark Towards Digital Twins via LLM Persona Simulation</title>
-    
+    <meta name="description" content="TwinVoice is a benchmark for LLM persona simulation: 5,687 real-world instances across social, interpersonal and narrative personas, evaluated on six fundamental capabilities.">
+    <meta name="color-scheme" content="light dark">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="TwinVoice: A Multi-dimensional Benchmark Towards Digital Twins via LLM Persona Simulation">
+    <meta property="og:description" content="Can an LLM speak in your voice? 5,687 real-world instances across social, interpersonal and narrative personas.">
+    <meta property="og:url" content="https://twinvoice.github.io/">
+    <meta property="og:image" content="https://twinvoice.github.io/Figures/Overview.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="icon" href="Figures/logo.jpg">
     <link rel="stylesheet" href="style.css">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
-    <header class="logo-header">
-        <img src="Figures/logo.jpg" alt="TwinVoice Logo" class="logo">
+    <header class="hero">
+        <div class="container">
+            <img src="Figures/logo.jpg" alt="TwinVoice logo" class="logo">
+            <p class="venue">ACL 2026</p>
+            <h1>TwinVoice: A Multi-dimensional Benchmark Towards Digital Twins via LLM Persona Simulation</h1>
+
+            <section class="authors" aria-label="Authors">
+                <div class="author-group">
+                    <span>Bangde Du<sup>1*</sup></span>,
+                    <span>Minghao Guo<sup>2*</sup></span>,
+                    <span>Songming He<sup>3</sup></span>,
+                    <span>Ziyi Ye<sup>3†</sup></span>,
+                    <span>Xi Zhu<sup>2</sup></span>,
+                    <span>Weihang Su<sup>1</sup></span>,
+                    <span>Shuqi Zhu<sup>1</sup></span>,
+                    <span>Yujia Zhou<sup>1</sup></span>,
+                    <span>Yongfeng Zhang<sup>2</sup></span>,
+                    <span>Qingyao Ai<sup>1†</sup></span>,
+                    <span>Yiqun Liu<sup>1</sup></span>
+                </div>
+                <div class="affiliations">
+                    <span><sup>1</sup>Tsinghua University</span>
+                    <span><sup>2</sup>Rutgers University</span>
+                    <span><sup>3</sup>Fudan University</span>
+                </div>
+                <div class="contributions">
+                    <span><sup>*</sup>Equal Contribution</span>
+                    <span><sup>†</sup>Corresponding authors</span>
+                </div>
+            </section>
+
+            <nav class="metadata-links" aria-label="Resources">
+                <a href="https://arxiv.org/abs/2510.25536" class="link-button primary" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-file-lines" aria-hidden="true"></i> Paper
+                </a>
+                <a href="https://github.com/TwinVoice/TwinBench" class="link-button" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github" aria-hidden="true"></i> Code
+                </a>
+                <a href="https://huggingface.co/spaces/bangdedadi/TwinVoice-Leaderboard" class="link-button" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-ranking-star" aria-hidden="true"></i> Leaderboard
+                </a>
+                <a href="https://huggingface.co/datasets/bangdedadi/TwinVoice" class="link-button" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-database" aria-hidden="true"></i> Dataset
+                </a>
+            </nav>
+        </div>
     </header>
 
-    <div class="container">
+    <main class="container">
 
-        <header class="paper-header">
-            <h1>TwinVoice: A Multi-dimensional Benchmark Towards Digital Twins via LLM Persona Simulation</h1>
-        </header>
-
-        <section class="authors">
-            <div class="author-group">
-                <span>Bangde Du<sup>1*</sup></span>,
-                <span>Minghao Guo<sup>2*</sup></span>,
-                <span>Songming He<sup>3</sup></span>,
-                <span>Ziyi Ye<sup>3†</sup></span>,
-                <span>Xi Zhu<sup>2</sup></span>,
-                <span>Weihang Su<sup>1</sup></span>,
-                <span>Shuqi Zhu<sup>1</sup></span>,
-                <span>Yujia Zhou<sup>1</sup></span>,
-                <span>Yongfeng Zhang<sup>2</sup></span>,
-                <span>Qingyao Ai<sup>1†</sup></span>,
-                <span>Yiqun Liu<sup>1</sup></span>
+        <section class="stats" aria-label="Benchmark at a glance">
+            <div class="stat">
+                <span class="stat-value">5,687</span>
+                <span class="stat-label">test instances</span>
             </div>
-            <div class="affiliations">
-                <span><sup>1</sup>Tsinghua University</span>
-                <span><sup>2</sup>Rutgers University</span>
-                <span><sup>3</sup>Fudan University</span>
+            <div class="stat">
+                <span class="stat-value">3</span>
+                <span class="stat-label">persona dimensions</span>
             </div>
-            <div class="contributions">
-                <span><sup>*</sup>Equal Contribution</span>
-                <span><sup>†</sup>Corresponding authors</span>
+            <div class="stat">
+                <span class="stat-value">6</span>
+                <span class="stat-label">fundamental capabilities</span>
             </div>
-        </section>
-
-        <section class="metadata-links">
-            <a href="#" class="link-button">
-                <i class="fas fa-globe"></i> Project Page
-            </a>
-            <a href="https://huggingface.co/spaces/bangdedadi/TwinVoice-Leaderboard" class="link-button" target="_blank" rel="noopener noreferrer">
-                <i class="fas fa-smile-beam"></i> Leaderboard
-            </a>
-            <a href="#" class="link-button">
-                <i class="fas fa-database"></i> Dataset
-            </a>
-            <a href="https://github.com/TwinVoice/TwinBench" class="link-button" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-github"></i> Code
-            </a>
+            <div class="stat">
+                <span class="stat-value">9</span>
+                <span class="stat-label">models evaluated</span>
+            </div>
         </section>
 
         <section class="abstract">
@@ -72,30 +101,182 @@
             </p>
         </section>
 
+        <section class="leaderboard" id="leaderboard">
+            <h2>Leaderboard</h2>
+            <p class="lead">
+                <code>gpt-6-astra</code> leads the full benchmark at 85.0% average accuracy. Generated replies still score close to 2 on a 5-point scale for every model, so writing in a persona's own voice remains unsolved.
+            </p>
+
+            <div class="table-wrap">
+                <table class="lb-table">
+                    <thead>
+                        <tr>
+                            <th class="num">#</th>
+                            <th>Model</th>
+                            <th class="bar-col">Avg. Acc. (%)</th>
+                            <th class="num">Social</th>
+                            <th class="num">Interpersonal</th>
+                            <th class="num">Narrative</th>
+                            <th class="num">Avg. Score (Gen)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="num">1</td>
+                            <td class="model">gpt-6-astra <span class="tag">New</span></td>
+                            <td class="bar-col"><span class="bar"><span class="meter" title="Average accuracy 85.0%"><span class="fill" style="width:85.0%"></span></span><span class="figure best">85.0</span></span></td>
+                            <td class="num best">69.8</td>
+                            <td class="num best">86.8</td>
+                            <td class="num best">98.3</td>
+                            <td class="num best">2.25</td>
+                        </tr>
+                        <tr>
+                            <td class="num">2</td>
+                            <td class="model">Claude-Sonnet-4</td>
+                            <td class="bar-col"><span class="bar"><span class="meter" title="Average accuracy 76.2%"><span class="fill" style="width:76.2%"></span></span><span class="figure">76.2</span></span></td>
+                            <td class="num">53.9</td>
+                            <td class="num">84.4</td>
+                            <td class="num">90.2</td>
+                            <td class="num">2.12</td>
+                        </tr>
+                        <tr>
+                            <td class="num">3</td>
+                            <td class="model">claude-opus-5-5 <span class="tag">New</span></td>
+                            <td class="bar-col"><span class="bar"><span class="meter" title="Average accuracy 75.8%"><span class="fill" style="width:75.8%"></span></span><span class="figure">75.8</span></span></td>
+                            <td class="num">55.7</td>
+                            <td class="num">74.8</td>
+                            <td class="num">96.9</td>
+                            <td class="num">2.14</td>
+                        </tr>
+                        <tr>
+                            <td class="num">4</td>
+                            <td class="model">GPT-5-Chat</td>
+                            <td class="bar-col"><span class="bar"><span class="meter" title="Average accuracy 71.2%"><span class="fill" style="width:71.2%"></span></span><span class="figure">71.2</span></span></td>
+                            <td class="num">46.9</td>
+                            <td class="num">77.4</td>
+                            <td class="num">89.4</td>
+                            <td class="num">2.13</td>
+                        </tr>
+                        <tr>
+                            <td class="num">5</td>
+                            <td class="model">DeepSeek-V3</td>
+                            <td class="bar-col"><span class="bar"><span class="meter" title="Average accuracy 64.5%"><span class="fill" style="width:64.5%"></span></span><span class="figure">64.5</span></span></td>
+                            <td class="num">42.6</td>
+                            <td class="num">70.0</td>
+                            <td class="num">81.0</td>
+                            <td class="num">2.06</td>
+                        </tr>
+                        <tr>
+                            <td class="num">6</td>
+                            <td class="model">GPT-OSS-20B</td>
+                            <td class="bar-col"><span class="bar"><span class="meter" title="Average accuracy 48.8%"><span class="fill" style="width:48.8%"></span></span><span class="figure">48.8</span></span></td>
+                            <td class="num">39.1</td>
+                            <td class="num">63.3</td>
+                            <td class="num">43.9</td>
+                            <td class="num">1.88</td>
+                        </tr>
+                        <tr>
+                            <td class="num">7</td>
+                            <td class="model">Qwen2.5-14B</td>
+                            <td class="bar-col"><span class="bar"><span class="meter" title="Average accuracy 48.8%"><span class="fill" style="width:48.8%"></span></span><span class="figure">48.8</span></span></td>
+                            <td class="num">36.2</td>
+                            <td class="num">49.6</td>
+                            <td class="num">60.5</td>
+                            <td class="num">1.93</td>
+                        </tr>
+                        <tr>
+                            <td class="num">8</td>
+                            <td class="model">GPT-3.5-Turbo</td>
+                            <td class="bar-col"><span class="bar"><span class="meter" title="Average accuracy 47.5%"><span class="fill" style="width:47.5%"></span></span><span class="figure">47.5</span></span></td>
+                            <td class="num">34.9</td>
+                            <td class="num">41.2</td>
+                            <td class="num">66.3</td>
+                            <td class="num">2.03</td>
+                        </tr>
+                        <tr>
+                            <td class="num">9</td>
+                            <td class="model">GPT-4o-mini</td>
+                            <td class="bar-col"><span class="bar"><span class="meter" title="Average accuracy 45.9%"><span class="fill" style="width:45.9%"></span></span><span class="figure">45.9</span></span></td>
+                            <td class="num">35.3</td>
+                            <td class="num">39.2</td>
+                            <td class="num">63.1</td>
+                            <td class="num">2.01</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="table-note">
+                Social, Interpersonal and Narrative are discriminative accuracies in percent (four choices, 25% is chance). Avg. Score (Gen) is the judged similarity between generated and real replies on a 1&ndash;5 scale, averaged over the three dimensions. The two models marked New were added in November 2026 and judged by <code>gpt-5.5</code>; the others were judged by GPT-5-Chat.
+            </p>
+            <p class="table-more">
+                <a href="https://huggingface.co/spaces/bangdedadi/TwinVoice-Leaderboard" target="_blank" rel="noopener noreferrer">Full metrics on the interactive leaderboard <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+            </p>
+        </section>
+
         <section class="figure">
             <h2>Overview</h2>
-            
-            <img src="Figures/Overview.png" alt="Conceptual Framework of TwinVoice">
-            
-            <figcaption>
-                <strong>Figure 1:</strong> The framework of TwinVoice: (Left) The evaluation is structured across three core dimensions that represent distinct aspects of identity expression: Social Persona (public facing), Interpersonal Persona (private interaction), and Narrative Persona (fictional scenarios). The LLMs are prompted with a person’s historical context to simulate their behavior. The LLM’s ability for persona simulation is categorized into six fundamental capabilities. 
-                (Right) Experimental results averaged over three dimensions are presented.
-            </figcaption>
+            <figure>
+                <img src="Figures/Overview.png" alt="The TwinVoice framework: three persona dimensions, six capabilities, and averaged experimental results" loading="lazy">
+                <figcaption>
+                    <strong>Figure 1:</strong> The framework of TwinVoice: (Left) The evaluation is structured across three core dimensions that represent distinct aspects of identity expression: Social Persona (public facing), Interpersonal Persona (private interaction), and Narrative Persona (fictional scenarios). The LLMs are prompted with a person’s historical context to simulate their behavior. The LLM’s ability for persona simulation is categorized into six fundamental capabilities.
+                    (Right) Experimental results averaged over three dimensions are presented.
+                </figcaption>
+            </figure>
         </section>
 
         <section class="figure">
             <h2>Task Definition</h2>
-            
-            <img src="Figures/Task.png" alt="Conceptual Framework of TwinVoice">
-            
-            <figcaption>
-                <strong>Figure 2:</strong> TwinVoice experiment evaluation overview: Top: The LLMs are prompted with a specific persona’s history and tasked with a stimulus. Bottom: Three evaluation protocols: Discriminative: the model chooses among A–D, one of which is the ground truth persona behavior. Generative-Ranking: the model writes and an LLM - as- a-Judge selects the best candidate, yielding Acc.(Gen). Generative–Scoring: the model writes and the Judge rates similarity on opinion, logic, and style, yielding Score(Gen).
-            </figcaption>
+            <figure>
+                <img src="Figures/Task.png" alt="The three TwinVoice evaluation protocols: discriminative, generative ranking, and generative scoring" loading="lazy">
+                <figcaption>
+                    <strong>Figure 2:</strong> TwinVoice experiment evaluation overview: Top: The LLMs are prompted with a specific persona’s history and tasked with a stimulus. Bottom: Three evaluation protocols: Discriminative: the model chooses among A–D, one of which is the ground truth persona behavior. Generative-Ranking: the model writes and an LLM-as-a-Judge selects the best candidate, yielding Acc.(Gen). Generative-Scoring: the model writes and the Judge rates similarity on opinion, logic, and style, yielding Score(Gen).
+                </figcaption>
+            </figure>
         </section>
 
-    </div> <footer>
+        <section class="quickstart">
+            <h2>Evaluate Your Model</h2>
+            <p>
+                TwinBench, the evaluation code, works with any OpenAI-compatible endpoint. A small run takes one command:
+            </p>
+<pre><code>git clone https://github.com/TwinVoice/TwinBench.git
+cd TwinBench &amp;&amp; pip install -r requirements.txt
+python -m twinvoice.evaluate --dimension all --preset small --model YOUR_MODEL</code></pre>
+        </section>
+
+        <section class="citation">
+            <h2>Citation</h2>
+            <div class="bibtex">
+                <button type="button" class="copy-button" id="copy-bibtex">Copy</button>
+<pre><code id="bibtex">@article{du2025twinvoice,
+  title={TwinVoice: A Multi-dimensional Benchmark Towards Digital Twins via LLM Persona Simulation},
+  author={Du, Bangde and Guo, Minghao and He, Songming and Ye, Ziyi and Zhu, Xi and Su, Weihang and Zhu, Shuqi and Zhou, Yujia and Zhang, Yongfeng and Ai, Qingyao and others},
+  journal={arXiv preprint arXiv:2510.25536},
+  year={2025}
+}</code></pre>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
         <p>TwinVoice is My Voice</p>
     </footer>
+
+    <script>
+        (function () {
+            var button = document.getElementById('copy-bibtex');
+            var source = document.getElementById('bibtex');
+            if (!button || !source || !navigator.clipboard) { if (button) { button.hidden = true; } return; }
+            button.addEventListener('click', function () {
+                navigator.clipboard.writeText(source.textContent).then(function () {
+                    button.textContent = 'Copied';
+                    setTimeout(function () { button.textContent = 'Copy'; }, 1600);
+                });
+            });
+        })();
+    </script>
 
 </body>
 </html>
